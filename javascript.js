@@ -11,6 +11,8 @@ function createColumnSquare(columnSquareQty) {
         square.style.height = `${squareSize}px`;
         square.style.width = `${squareSize}px`;
         columnContainer.appendChild(square);
+        //background color of square will become black when the mouse move over
+        square.addEventListener("mouseover", () => square.style.backgroundColor = "black");
     }
 }
 
