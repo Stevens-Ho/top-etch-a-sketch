@@ -1,10 +1,39 @@
+* {
+    box-sizing: border-box;
+}
+
 .columnContainer {
     display: flex;
 
 }
 
 .square {
-    border: 2px solid black;
-    margin: 0 -2px -2px 0;
+    border: 1px solid black;
     padding: 0;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 1300px;
+    height: 600px;
+}
+
+.leftContainer {
+    align-items: center;
+}
+
+.rightContainer {
+    border: 1px solid black;
+    width: 500px;
+    height: 500px;
+}
+
+.margin {
+    margin: 8px;
+}
+
+.block {
+    display: block;
 }

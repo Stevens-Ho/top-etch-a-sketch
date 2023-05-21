@@ -1,9 +1,9 @@
-const container = document.querySelector(".container");
+const squareContainer = document.getElementById("squareContainer");
 
 function createColumnSquare(columnSquareQty) {
     const columnContainer = document.createElement("div");
     columnContainer.classList.add("columnContainer");
-    container.appendChild(columnContainer);
+    squareContainer.appendChild(columnContainer);
     for (let i = 0; i < columnSquareQty; i++) {
         const square = document.createElement("div");
         square.classList.add("square");
@@ -22,4 +22,14 @@ function createGridSquare(rowSquareQty) {
     }
 }
 
-createGridSquare(16);
+function userInputSquareQty() {
+    const submit = document.getElementById("submit");
+    const userInput = document.getElementById("userInput");
+    submit.addEventListener("click", () => {
+        if (userInput.value > 0 && userInput.value <= 100) {
+        createGridSquare(userInput.value);
+        }
+    });
+}
+
+userInputSquareQty();
