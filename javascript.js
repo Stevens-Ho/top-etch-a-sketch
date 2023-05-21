@@ -27,9 +27,15 @@ function userInputSquareQty() {
     const userInput = document.getElementById("userInput");
     submit.addEventListener("click", () => {
         if (userInput.value > 0 && userInput.value <= 100) {
-        createGridSquare(userInput.value);
+            removeOldGridSquare();
+            createGridSquare(userInput.value);
         }
     });
+}
+
+//remove the square user input last time when user give new input
+function removeOldGridSquare() {
+    squareContainer.innerHTML = "";
 }
 
 userInputSquareQty();
