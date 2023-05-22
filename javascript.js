@@ -12,6 +12,7 @@ function createColumnSquare(columnSquareQty) {
         square.style.width = `${squareSize}px`;
         columnContainer.appendChild(square);
         addSquareColor(square);
+        generateEraser(square);
     }
 }
 
@@ -52,6 +53,15 @@ function addSquareColor(square) {
 function getRandomColor() {
     let hexColor = `#${Math.random().toString(16).slice(-6)}`;
     return hexColor;
+}
+
+function generateEraser(square) {
+    const eraserBtn = document.getElementById("eraserBtn");
+    eraserBtn.addEventListener("click", () => {
+        square.addEventListener("mouseover", ()=> {
+            square.style.backgroundColor = document.body.style.backgroundColor;
+        })
+    })
 }
 
 userInputSquareQty();
