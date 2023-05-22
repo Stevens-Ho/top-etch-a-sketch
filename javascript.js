@@ -11,8 +11,7 @@ function createColumnSquare(columnSquareQty) {
         square.style.height = `${squareSize}px`;
         square.style.width = `${squareSize}px`;
         columnContainer.appendChild(square);
-        //background color of square will become black when the mouse move over
-        square.addEventListener("mouseover", () => square.style.backgroundColor = "black");
+        addSquareColor(square);
     }
 }
 
@@ -36,6 +35,23 @@ function userInputSquareQty() {
 //remove the square user input last time when user give new input
 function removeOldGridSquare() {
     squareContainer.innerHTML = "";
+}
+
+
+function addSquareColor(square) {
+    const blackColorBtn = document.getElementById("blackColorBtn");
+    const randomColorBtn = document.getElementById("randomColorBtn");
+    blackColorBtn.addEventListener("click", () => {
+        square.addEventListener("mouseover", () => square.style.backgroundColor = "black");
+    });
+    randomColorBtn.addEventListener("click", () => {
+        square.addEventListener("mouseover", () => square.style.backgroundColor = getRandomColor());
+    });
+}
+
+function getRandomColor() {
+    let hexColor = `#${Math.random().toString(16).slice(-6)}`;
+    return hexColor;
 }
 
 userInputSquareQty();

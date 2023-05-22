@@ -37,3 +37,7 @@
 .block {
     display: block;
 }
+
+.flexbox {
+    display: flex;
+}
