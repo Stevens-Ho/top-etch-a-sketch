@@ -60,8 +60,8 @@ function generateEraser(square) {
     eraserBtn.addEventListener("click", () => {
         square.addEventListener("mouseover", ()=> {
             square.style.backgroundColor = document.body.style.backgroundColor;
-        })
-    })
+        });
+    });
 }
 
 userInputSquareQty();
