@@ -14,6 +14,7 @@ function createColumnSquare(columnSquareQty) {
         addSquareColor(square);
         generateEraser(square);
     }
+    clearSquareColor();
 }
 
 function createGridSquare(rowSquareQty) {
@@ -64,4 +65,15 @@ function generateEraser(square) {
     });
 }
 
+function clearSquareColor() {
+    const clearBtn = document.getElementById("clearBtn");
+    let squaree = document.querySelectorAll(".square");
+    clearBtn.addEventListener("click", () => {
+        squaree.forEach((e) => {
+            e.style.backgroundColor = document.body.style.backgroundColor;
+        });
+    });
+}
+
 userInputSquareQty();
+
