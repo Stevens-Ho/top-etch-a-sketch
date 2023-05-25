@@ -13,8 +13,8 @@ function createColumnSquare(columnSquareQty) {
         columnContainer.appendChild(square);
         addSquareColor(square);
         generateEraser(square);
+        clearSquareColor();
     }
-    clearSquareColor();
 }
 
 function createGridSquare(rowSquareQty) {
@@ -28,15 +28,10 @@ function userInputSquareQty() {
     const userInput = document.getElementById("userInput");
     submit.addEventListener("click", () => {
         if (userInput.value > 0 && userInput.value <= 100) {
-            removeOldGridSquare();
+            squareContainer.innerHTML = "";
             createGridSquare(userInput.value);
         }
     });
-}
-
-//remove the square user input last time when user give new input
-function removeOldGridSquare() {
-    squareContainer.innerHTML = "";
 }
 
 function addSquareColor(square) {
@@ -66,9 +61,9 @@ function generateEraser(square) {
 
 function clearSquareColor() {
     const clearBtn = document.getElementById("clearBtn");
-    let squaree = document.querySelectorAll(".square");
+    let square = document.querySelectorAll(".square");
     clearBtn.addEventListener("click", () => {
-        squaree.forEach((e) => {
+        square.forEach((e) => {
             e.style.backgroundColor = document.body.style.backgroundColor;
         });
     });
