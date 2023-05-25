@@ -39,7 +39,6 @@ function removeOldGridSquare() {
     squareContainer.innerHTML = "";
 }
 
-
 function addSquareColor(square) {
     const blackColorBtn = document.getElementById("blackColorBtn");
     const randomColorBtn = document.getElementById("randomColorBtn");
@@ -76,4 +75,3 @@ function clearSquareColor() {
 }
 
 userInputSquareQty();
-
